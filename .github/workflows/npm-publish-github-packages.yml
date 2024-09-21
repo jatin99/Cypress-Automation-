@@ -25,6 +25,20 @@ jobs:
 
       - name: Run Cypress Test
         run: npx cypress run
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.2.1-node20
+        with:
+          if: always()
+          name: Screenshot
+          path: cypress/screenshots
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.2.1-node20
+        with:
+          if: always()
+          name: Videos
+          path: cypress/videos
         
       
 
